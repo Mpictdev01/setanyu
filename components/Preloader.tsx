@@ -106,6 +106,7 @@ export default function Preloader() {
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
+				backgroundColor: "black",
 				opacity: isVisible ? 1 : 0,
 				transition: "opacity 0.8s ease-out",
 				pointerEvents: isVisible ? "auto" : "none",
