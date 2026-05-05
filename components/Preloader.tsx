@@ -103,10 +103,19 @@ export default function Preloader() {
 			id="preloader"
 			className="fixed inset-0 z-[100] flex items-center justify-center"
 			style={{
+				position: "fixed",
+				top: 0,
+				left: 0,
+				width: "100%",
+				height: "100%",
+				zIndex: 100,
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
 				backgroundColor: "black",
+				backgroundImage: "url('/bg.jpeg')",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
 				opacity: isVisible ? 1 : 0,
 				transition: "opacity 0.8s ease-out",
 				pointerEvents: isVisible ? "auto" : "none",
@@ -176,9 +185,11 @@ export default function Preloader() {
 					hideTitleBar={true}>
 					<div className="flex flex-col items-center gap-8 py-4 px-8 min-w-[320px]">
 						<div className="flex items-center justify-center gap-4">
+							<img src="/flag.jpg" alt="Israel Flag" className="w-12 h-8 md:w-16 md:h-10 object-cover rounded shadow-lg border-2 border-white/50" draggable={false} />
 							<h1 className="text-5xl font-black text-white tracking-tighter drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] text-center">
-								BENJAMIN NETANYAZU
+								BENJAMIN
 							</h1>
+							<img src="/flag.jpg" alt="Israel Flag" className="w-12 h-8 md:w-16 md:h-10 object-cover rounded shadow-lg border-2 border-white/50" draggable={false} />
 						</div>
 						<div className="w-64">
 							<ToyBuyButton label="ENTER" onClick={handleStart} fullWidth />

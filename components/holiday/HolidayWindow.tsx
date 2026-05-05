@@ -47,7 +47,7 @@ const HolidayWindow = ({
 						borderTopLeftRadius: "18px",
 						borderTopRightRadius: "18px",
 						background:
-							"linear-gradient(90deg, rgba(0,0,128,0.6), rgba(16,132,208,0.6))",
+							"linear-gradient(90deg, #002277, #0038b8)",
 						display: "flex",
 						justifyContent: "space-between",
 						alignItems: "center",
@@ -71,13 +71,10 @@ const HolidayWindow = ({
 								className="w-4 h-4 object-contain pixelated relative top-[1px]"
 							/>
 						)}
-						<span className="truncate pixel-text relative top-[1px]">
-							{title
-								.replace(
-									/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu,
-									""
-								)
-								.trim()}
+						<span className="truncate flex items-center justify-center gap-2 relative top-[1px]">
+							{title && <img src="/flag.jpg" alt="Flag" className="w-5 h-3.5 object-cover rounded-[2px] shadow-sm border border-black/20" draggable={false} />}
+							<span className="pixel-text">{title.replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, "").trim()}</span>
+							{title && <img src="/flag.jpg" alt="Flag" className="w-5 h-3.5 object-cover rounded-[2px] shadow-sm border border-black/20" draggable={false} />}
 						</span>
 					</div>
 					{!hideControls && (

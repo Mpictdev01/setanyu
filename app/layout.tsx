@@ -68,7 +68,7 @@ export default function RootLayout({
 					}}
 				/>
 				{children}
-				<Script src="https://cdn.tailwindcss.com" strategy="afterInteractive" />
+				<Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
 				<Script src="/config.js" strategy="afterInteractive" />
 				<Script src="/main.js" strategy="afterInteractive" />
 				<Script src="/dex-chart.js" strategy="afterInteractive" />

@@ -59,59 +59,37 @@ export default function SocialLinks() {
 		<div
 			key={mounted ? "client-mounted" : "server-loading"}
 			className="flex flex-col gap-2 items-start w-[200px]">
-			{/* Twitter Button */}
+			{/* Twitter Button (Blue) */}
 			<a
 				href={config?.twitter_url || "#"}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="standard-98-button w-full flex items-center justify-between group no-underline"
+				className="w-full flex items-center justify-between group no-underline bg-[#0038b8] hover:bg-[#002277] border border-[#0038b8] backdrop-blur-md shadow-lg rounded-lg px-4 py-2 text-white transition-all hover:scale-[1.02] active:scale-95"
 				aria-label="Twitter">
-				<span className="text-xs font-bold tracking-wider">TWITTER</span>
-				<span className="text-[10px]">↗</span>
+				<span className="text-xs font-bold tracking-wider drop-shadow-md">TWITTER</span>
+				<span className="text-[10px] opacity-70 group-hover:opacity-100">↗</span>
 			</a>
 
-			{/* Telegram Button */}
-			<a
-				href={config?.telegram_url || "#"}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="standard-98-button w-full flex items-center justify-between group no-underline"
-				aria-label="Telegram">
-				<span className="text-xs font-bold tracking-wider">TELEGRAM</span>
-				<span className="text-[10px]">↗</span>
-			</a>
-
-			{/* Community Button */}
+			{/* Community Button (White) */}
 			<a
 				href={config?.community_url || "#"}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="standard-98-button w-full flex items-center justify-between group no-underline"
+				className="w-full flex items-center justify-between group no-underline bg-white hover:bg-gray-100 border border-white backdrop-blur-md shadow-lg rounded-lg px-4 py-2 text-[#0038b8] transition-all hover:scale-[1.02] active:scale-95"
 				aria-label="Community">
-				<span className="text-xs font-bold tracking-wider">COMMUNITY</span>
-				<span className="text-[10px]">↗</span>
+				<span className="text-xs font-black tracking-wider">COMMUNITY</span>
+				<span className="text-[10px] opacity-70 group-hover:opacity-100">↗</span>
 			</a>
 
-			{/* Chart Button */}
+			{/* Chart Button (Blue) */}
 			<a
 				href={chartUrl || "#"}
 				target="_blank"
 				rel="noopener noreferrer"
-				className="standard-98-button w-full flex items-center justify-between group no-underline"
+				className="w-full flex items-center justify-between group no-underline bg-[#0038b8] hover:bg-[#002277] border border-[#0038b8] backdrop-blur-md shadow-lg rounded-lg px-4 py-2 text-white transition-all hover:scale-[1.02] active:scale-95"
 				aria-label="Chart">
-				<span className="text-xs font-bold tracking-wider">CHART</span>
-				<span className="text-[10px]">↗</span>
-			</a>
-
-			{/* Buy Button */}
-			<a
-				href={buyUrl || "#"}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="standard-98-button w-full flex items-center justify-between group no-underline"
-				aria-label="Buy">
-				<span className="text-xs font-bold tracking-wider">BUY</span>
-				<span className="text-[10px]">↗</span>
+				<span className="text-xs font-bold tracking-wider drop-shadow-md">CHART</span>
+				<span className="text-[10px] opacity-70 group-hover:opacity-100">↗</span>
 			</a>
 		</div>
 	);

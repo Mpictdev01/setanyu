@@ -62,6 +62,35 @@ export default function Home() {
 				draggable={false}
 			/>
 
+			{/* Explosion Decorations (Background) */}
+			<img
+				src="/explosion-gif-transparent.gif"
+				alt="Explosion 1"
+				className="fixed top-[10%] left-[5%] z-0 w-40 md:w-56 pointer-events-none mix-blend-screen opacity-70"
+				draggable={false}
+			/>
+			<img
+				src="/explosion-gif-transparent.gif"
+				alt="Explosion 2"
+				className="fixed bottom-[20%] right-[10%] z-0 w-32 md:w-48 pointer-events-none mix-blend-screen opacity-60"
+				draggable={false}
+				style={{ transform: "rotate(45deg)" }}
+			/>
+			<img
+				src="/explosion-gif-transparent.gif"
+				alt="Explosion 3"
+				className="fixed top-[30%] right-[5%] z-0 w-48 md:w-64 pointer-events-none mix-blend-screen opacity-75"
+				draggable={false}
+				style={{ transform: "rotate(-15deg)" }}
+			/>
+			<img
+				src="/explosion-gif-transparent.gif"
+				alt="Explosion 4"
+				className="fixed bottom-[10%] left-[15%] z-0 w-36 md:w-52 pointer-events-none mix-blend-screen opacity-65"
+				draggable={false}
+				style={{ transform: "rotate(20deg)" }}
+			/>
+
 			{/* <FloatingActions /> */}
 		</>
 	);

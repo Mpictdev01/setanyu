@@ -4,38 +4,21 @@ import React from "react";
 
 const LoveMarquee = () => {
 	return (
-		<div className="w-full max-w-[80vw] mx-auto mb-2 overflow-hidden relative rounded-xl border border-white/20 bg-black/20 backdrop-blur-md shadow-inner py-1 h-8 flex items-center">
-			<div className="frutiger-aero-noise" style={{ opacity: 0.1 }} />
+		<div className="w-full max-w-[80vw] mx-auto mb-2 overflow-hidden relative bg-white border-t-4 border-b-4 border-[#0038b8] shadow-md py-1 h-10 flex items-center">
 			<div className="animate-marquee whitespace-nowrap flex">
 				{/* Doubling the items to ensure seamless loop */}
 				{[...Array(20)].map((_, i) => (
 					<span
 						key={i}
-						className="mx-4 font-bold text-2xl"
-						style={{
-							background:
-								"linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000)",
-							backgroundSize: "200% auto",
-							WebkitBackgroundClip: "text",
-							WebkitTextFillColor: "transparent",
-							animation: "shine 2s linear infinite",
-						}}>
-						$BENJAMINNETANYAZU
+						className="mx-4 font-black text-2xl tracking-widest text-[#0038b8]">
+						$BENJAMIN
 					</span>
 				))}
 				{[...Array(20)].map((_, i) => (
 					<span
 						key={`dup-${i}`}
-						className="mx-4 font-bold text-2xl"
-						style={{
-							background:
-								"linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000)",
-							backgroundSize: "200% auto",
-							WebkitBackgroundClip: "text",
-							WebkitTextFillColor: "transparent",
-							animation: "shine 2s linear infinite",
-						}}>
-						$BENJAMINNETANYAZU
+						className="mx-4 font-black text-2xl tracking-widest text-[#0038b8]">
+						$BENJAMIN
 					</span>
 				))}
 			</div>

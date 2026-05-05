@@ -20,14 +20,14 @@ export default function SidePanelHoliday() {
 			<HolidaySidePanel title="THE LORE" className="sm:w-[250px] w-full">
 				<div className="w-full h-auto text-[10px] text-white/90 p-3 leading-relaxed font-sans text-center">
 					<p>
-						Born from a Matrix glitch, Benjamin Netanyazu embodies the chaotic energy of the
-						bull run. Hold Benjamin Netanyazu to ride the eternal green waves.
+						Born from a Matrix glitch, Benjamin embodies the chaotic energy of the
+						bull run. Hold Benjamin to ride the eternal green waves.
 					</p>
 				</div>
 			</HolidaySidePanel>
 
 			{/* Video Window */}
-			<HolidaySidePanel title="BENJAMIN NETANYAZU CAM" className="sm:w-[250px] w-full flex-1 min-h-0 flex flex-col">
+			<HolidaySidePanel title="BENJAMIN CAM" className="sm:w-[250px] w-full flex-1 min-h-0 flex flex-col">
 				<RandomImageCam
 					isPlaying={isPlaying}
 					onTogglePlay={togglePlay}
@@ -75,8 +75,8 @@ function RandomImageCam({
 		>
 			<img
 				src={images[currentIndex]}
-				className="absolute inset-0 w-full h-full block object-cover object-top"
-				alt="Benjamin Netanyazu Cam"
+				className="absolute inset-0 w-full h-full block object-contain object-bottom"
+				alt="Benjamin Cam"
 				draggable={false}
 			/>
 			<div className="absolute top-2 right-2 text-[10px] text-red-500 font-bold animate-pulse pointer-events-none">
