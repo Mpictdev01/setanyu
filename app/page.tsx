@@ -19,10 +19,13 @@ export default function Home() {
 		<>
 			<Preloader />
 			<img
-				src="/bg.jpeg"
+				src="/bg.avif"
 				alt="Background"
 				className="fixed inset-0 w-full h-full object-cover z-[-1] pointer-events-none"
 				draggable={false}
+				loading="eager"
+				fetchPriority="high"
+				decoding="async"
 			/>
 
 			<div

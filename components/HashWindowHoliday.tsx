@@ -58,10 +58,10 @@ export default function HashWindowHoliday() {
 						border: "none",
 					}}>
 					<div className="terminal-container !border-none !bg-transparent">
-						<div className="terminal-content !bg-black/60 rounded-[6px] backdrop-blur-sm">
+						<div className="terminal-content !bg-white/95 rounded-[6px] backdrop-blur-sm border-2 border-[#0038b8] shadow-md">
 							<div className="terminal-line flex items-center justify-center gap-3 flex-wrap py-1">
 								<span
-									className="terminal-text text-green-400"
+									className="terminal-text text-[#0038b8]"
 									id="contract-display"
 									style={{
 										fontFamily:

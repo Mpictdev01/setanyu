@@ -70,12 +70,12 @@ function RandomImageCam({
 
 	return (
 		<div 
-			className="w-full h-full flex-1 bg-black/40 rounded-lg overflow-hidden relative group cursor-pointer" 
+			className="w-full h-full flex-1 bg-black/40 rounded-[14px] overflow-hidden relative group cursor-pointer" 
 			onClick={onTogglePlay}
 		>
 			<img
 				src={images[currentIndex]}
-				className="absolute inset-0 w-full h-full block object-contain object-bottom"
+				className="absolute inset-0 w-full h-full block object-contain object-bottom rounded-[14px]"
 				alt="Benjamin Cam"
 				draggable={false}
 			/>

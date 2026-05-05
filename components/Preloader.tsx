@@ -113,7 +113,7 @@ export default function Preloader() {
 				alignItems: "center",
 				justifyContent: "center",
 				backgroundColor: "black",
-				backgroundImage: "url('/bg.jpeg')",
+				backgroundImage: "url('/bg.avif')",
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				opacity: isVisible ? 1 : 0,

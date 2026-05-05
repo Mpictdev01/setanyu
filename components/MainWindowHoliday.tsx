@@ -46,7 +46,7 @@ export default function MainWindowHoliday() {
 				<div className="relative w-full h-full flex flex-col items-center bg-black/40 rounded-xl overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] border border-white/10">
 					{/* Television Screen Background */}
 					<img
-						src="/bg.avif"
+						src="/bga.avif"
 						className="absolute inset-0 w-full h-full object-cover opacity-100 z-0"
 						alt="TV Screen"
 						draggable={false}
@@ -56,10 +56,10 @@ export default function MainWindowHoliday() {
 					<div className="frutiger-aero-noise opacity-30" />
 
 					{/* Content Overlay */}
-					<div className="relative z-10 flex flex-col items-center gap-4 flex-1 w-full mt-[10vh]">
+					<div className="relative z-10 flex flex-col items-center gap-4 flex-1 w-full mt-[4vh]">
 						{/* Title */}
-						<h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tighter drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] text-center whitespace-nowrap">
-							BENJAMIN NETANYAZU
+						<h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] text-center whitespace-nowrap">
+							BENJAMIN
 						</h1>
 						{/* API GIF - 140% width, centered and sunk 5% into window bottom, masked */}
 						<div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 z-0 pointer-events-none w-[140%]">

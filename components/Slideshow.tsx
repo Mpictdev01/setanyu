@@ -38,25 +38,25 @@ export default function Slideshow() {
 	};
 
 	return (
-		<div className="relative slideshow-container">
-			<div className="w-full aspect-square overflow-hidden rounded-xl border border-white/20 shadow-inner">
+		<div className="relative slideshow-container h-full">
+			<div className="w-full h-full overflow-hidden rounded-[14px] border border-white/20 shadow-inner">
 				{slides.map((slide, index) => (
 					<div
 						key={index}
 						className={`slideshow-slide ${
 							index === currentSlide ? "active" : ""
 						}`}
-						style={{ borderRadius: "10px !important" }}>
+						style={{ borderRadius: "14px !important" }}>
 						{slide.type === "image" ? (
 							<img
 								src={slide.src}
-								className="relative z-10 opacity-100 transition-transform-opacity motion-reduce:transition-none !duration-300 w-full h-full object-cover rounded-xl"
+								className="relative z-10 opacity-100 transition-transform-opacity motion-reduce:transition-none !duration-300 w-full h-full object-cover rounded-[14px]"
 								alt={slide.alt}
 								draggable={false}
 							/>
 						) : (
 							<video
-								className="relative z-10 opacity-100 transition-transform-opacity motion-reduce:transition-none !duration-300 w-full h-full object-cover rounded-xl"
+								className="relative z-10 opacity-100 transition-transform-opacity motion-reduce:transition-none !duration-300 w-full h-full object-cover rounded-[14px]"
 								autoPlay
 								muted
 								loop>

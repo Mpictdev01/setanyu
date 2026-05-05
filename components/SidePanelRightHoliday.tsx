@@ -13,8 +13,7 @@ export default function SidePanelRightHoliday() {
 			<HolidaySidePanel title="BENJAMIN MEMES" className="sm:w-[250px] w-full">
 				<div className="flex flex-col w-full">
 					<div
-						style={{ height: "200px" }}
-						className="w-full overflow-hidden flex items-center justify-center">
+						className="w-full h-[200px] overflow-hidden rounded-[14px] flex items-center justify-center">
 						<Slideshow />
 					</div>
 				</div>
