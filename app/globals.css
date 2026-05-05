@@ -1,0 +1,17 @@
+@import '../98.css';
+@import '../global.css';
+
+* {
+  font-family: var(--font-press-start-2p), monospace;
+}
+
+html,
+body {
+  cursor: auto;
+}
+
+/* Status bar menggunakan font biasa */
+.status-bar,
+.status-bar * {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+}

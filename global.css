@@ -1,0 +1,2052 @@
+/* Slideshow Styling */
+.slideshow-container {
+    position: relative;
+    overflow: visible;
+}
+
+.slideshow-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow-slide.active {
+    display: block;
+}
+
+.slideshow-slide img,
+.slideshow-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slideshow Navigation Buttons */
+.slideshow-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+}
+
+/* Removed empty slideshow button rules */
+
+.slideshow-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: inline-flex;
+    animation: marquee 23s linear infinite;
+}
+
+/* Standard Windows 98 Button Styling - Updated for Frutiger Aero */
+.standard-98-button,
+.slideshow-btn,
+.copy-btn-revert {
+    background: linear-gradient(180deg, #dfdfdf 0%, #bdbdbd 100%) !important;
+    border: 1px solid #808080 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 1px 1px #fff, 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    padding: 4px 10px !important;
+    min-height: 25px !important;
+    cursor: pointer !important;
+    color: #000 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: inherit !important;
+    transition: all 0.2s ease !important;
+}
+
+.standard-98-button:hover,
+.slideshow-btn:hover,
+.copy-btn-revert:hover {
+    background: linear-gradient(180deg, #eeeeee 0%, #dfdfdf 100%) !important;
+    transform: translateY(-1px) !important;
+}
+
+.standard-98-button:active,
+.slideshow-btn:active,
+.copy-btn-revert:active {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(1px) !important;
+    padding: 4px 10px !important;
+}
+
+/* Slideshow navigation specifics */
+.slideshow-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+}
+
+.slideshow-btn span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* Slideshow Indicators */
+.slideshow-indicators {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    z-index: 20;
+}
+
+.indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active,
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Global styles for BUDDY PROJECT Windows 98 theme with Tailwind */
+
+/* * {
+    cursor: none !important;
+} */
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, and Opera */
+}
+
+/* Video background overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Frutiger Aero Theme Classes */
+.frutiger-aero-window {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow:
+        /* Outer shadow for depth */
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        /* Top light catch (emboss) */
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        /* Left light catch */
+        inset 1px 0 0 rgba(255, 255, 255, 0.4),
+        /* Bottom shadow catch (emboss) */
+        inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+        /* Right shadow catch */
+        inset -1px 0 0 rgba(0, 0, 0, 0.2),
+        /* Inner soft glow */
+        inset 0 0 20px rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    position: relative;
+}
+
+.frutiger-aero-glass {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.frutiger-aero-reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0.1) 45%,
+            transparent 50%) !important;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.frutiger-aero-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    background-image: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif');
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: overlay;
+}
+
+.title-bar-controls button {
+    border-radius: 4px !important;
+    margin-left: 2px !important;
+}
+
+.frutiger-aero-title-bar {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    background: linear-gradient(deg, rgba(0, 0, 128, 0.7), rgba(16, 132, 208, 0.7)) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Social buttons styling */
+.social-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-size: 12px;
+    text-shadow: none;
+}
+
+.social-btn:hover {
+    background: #d0d0d0;
+}
+
+.social-btn a {
+    color: #000;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.social-btn a:hover {
+    color: #000;
+}
+
+/* Hash text styling */
+.hash-text {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #00ff00;
+    padding: 5px 10px;
+    border: 1px solid #008000;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+
+/* Window dragging cursor - only for main windows, not chart window */
+.title-bar:not(.dex-window .title-bar) {
+    cursor: move;
+}
+
+/* Logo glow effect like starlight */
+.logo-container img {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+}
+
+/* 
+.logo-container:hover img {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.4));
+    transform: scale(1.05);
+}
+*/
+
+/* Smooth animations */
+.window {
+    transition: all 0.3s ease;
+}
+
+/* Standard window hover - subtle */
+.window:hover {
+    transform: none;
+}
+
+/* Custom scrollbar for Windows 98 theme */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 17px;
+}
+
+::-webkit-scrollbar-corner {
+    background: #dfdfdf;
+}
+
+::-webkit-scrollbar-track {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='2' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1 0H0v1h1v1h1V1H1V0z' fill='silver'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 0H1v1H0v1h1V1h1V0z' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        overflow-x: auto;
+    }
+
+    .window {
+        transform: none !important;
+    }
+
+    .window:hover {
+        transform: none !important;
+    }
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Focus styles */
+button:focus,
+input:focus {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+}
+
+/* Preloader Styles */
+#preloader {
+    background: transparent;
+}
+
+#preloader video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ensure proper z-index stacking */
+.window {
+    position: relative;
+    z-index: 1;
+}
+
+.window.active {
+    z-index: 1000;
+}
+
+/* Background image fallbacks */
+.bg-\[url\(\'img\/retardioscreen1\.webp\'\)\] {
+    background-color: #008080;
+    background-image: linear-gradient(45deg, #008080 25%, transparent 25%),
+        linear-gradient(-45deg, #008080 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #008080 75%),
+        linear-gradient(-45deg, transparent 75%, #008080 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Ensure text is readable on background */
+.window-body-chart {
+    height: 100%;
+}
+
+.window-body {
+    color: #000;
+}
+
+.window-body .text-white {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Status bar improvements */
+.status-bar {
+    display: flex;
+    gap: 1px;
+    margin: 0 1px;
+}
+
+.status-bar-field {
+    box-shadow: inset -1px -1px #dfdfdf, inset 1px 1px grey;
+    flex-grow: 1;
+    padding: 2px 3px;
+    margin: 0;
+    font-size: 11px;
+}
+
+/* Terminal Theme for Hash Window */
+.terminal-container {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #2d2d2d;
+    padding: 8px 12px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.copy-btn {
+    background: #007acc;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background: #005a9e;
+}
+
+.copy-btn:active {
+    background: #004080;
+}
+
+.terminal-content {
+    padding: 12px;
+    background: #0a0a0a;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.terminal-line:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-prompt {
+    color: #00ff00;
+    margin-right: 8px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.terminal-text {
+    color: #ffffff;
+    word-break: break-all;
+    flex: 1;
+}
+
+/* Copy success animation */
+.copy-success {
+    background: #28a745 !important;
+    animation: copyPulse 0.5s ease-in-out;
+}
+
+@keyframes copyPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Notification System - Reverted to Standard 98 look */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 350px;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification-wrapper {
+    /* Uses standard .window styling via class name in JSX or just simple padding here */
+    padding: 2px;
+}
+
+.notification-content {
+    background: silver;
+    color: black;
+    padding: 12px 16px;
+    border: 1px solid #7f7f7f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a;
+}
+
+.notification-success .notification-content {
+    border-left: 4px solid #28a745;
+}
+
+.notification-error .notification-content {
+    border-left: 4px solid #dc3545;
+}
+
+.notification-info .notification-content {
+    border-left: 4px solid #17a2b8;
+}
+
+.notification-message {
+    flex: 1;
+    font-size: 12px;
+    font-family: var(--font-press-start-2p), "Press Start 2P", monospace;
+    line-height: 1.5;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.notification-close {
+    background: #FF4500;
+    border: 2px solid #000000;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 8px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 0 0 #000;
+    font-family: var(--font-press-start-2p), "Press Start 2P", monospace;
+}
+
+.notification-close:hover {
+    background: #FF6347;
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Copy button container for horizontal layout */
+.copy-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 12px;
+    background: #2d2d2d;
+    border-top: 1px solid #333;
+}
+
+/* Copy button wrapper for inline positioning */
+.copy-button-wrapper {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.terminal-line:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-prompt {
+    color: #00ff00;
+    margin-right: 8px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.terminal-text {
+    color: #ffffff;
+    word-break: break-all;
+    flex: 1;
+}
+
+/* Close Video Button */
+.close-video-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.close-video-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.close-video-btn:active {
+    background: #bd2130;
+    transform: translateY(0);
+}
+
+.close-video-btn i {
+    font-size: 12px;
+}
+
+/* Main Window Structure - Simple and Easy to Manage */
+.main-window {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.window-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Video Background */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.bg-container {
+    position: relative;
+    flex: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Ensure title bar is visible */
+.title-bar {
+    position: relative;
+    z-index: 10;
+}
+
+.content-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Character Section */
+.character-section {
+    text-align: center;
+}
+
+/* Right Floating Image - Now relative to hash-window */
+.character-section-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+}
+
+/* Ensure float2 is above meme layer */
+.hash-window .absolute img[src="img/float2.png"] {
+    z-index: 50 !important;
+}
+
+.character-image {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    transition: none;
+}
+
+
+/* Text Content */
+.text-content {
+    text-align: center;
+    color: white;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Social Section */
+.social-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.social-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-size: 12px;
+    text-shadow: none;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.social-btn a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    text-shadow: none;
+}
+
+/* Banner Section */
+.banner-section {
+    text-align: center;
+}
+
+.banner-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-overlay {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .character-image {
+        width: 250px;
+    }
+
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .social-section {
+        gap: 6px;
+    }
+
+    .social-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Buy Button - Completely Independent from Windows 98 Styles */
+.buy-section .buy-button {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: relative !important;
+    border: none !important;
+    border-width: 0 !important;
+    padding: 0 6px 10px !important;
+    min-width: 8em !important;
+    min-height: auto !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    font: inherit !important;
+    font-size: inherit !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.buy-section .buy-button-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 0 !important;
+    padding: 6px 14px !important;
+    transform: translateY(0) !important;
+    text-align: center !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    transition-property: transform !important;
+    transition-duration: .2s !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    font-size: 14px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.buy-section .buy-button:active .buy-button-top {
+    transform: translateY(6px) !important;
+}
+
+.buy-section .buy-button-top::after {
+    content: '' !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: content-box !important;
+    background-image: radial-gradient(#EA71CE, #d65bb8) !important;
+    text-align: center !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2) !important;
+    transition-property: border-radius, padding, width, transform !important;
+    transition-duration: .2s !important;
+}
+
+.buy-section .buy-button:active .buy-button-top::after {
+    border-radius: 6px !important;
+    padding: 0 2px !important;
+}
+
+.buy-section .buy-button-bottom {
+    position: absolute !important;
+    z-index: -1 !important;
+    bottom: 4px !important;
+    left: 4px !important;
+    border-radius: 8px / 16px 16px 8px 8px !important;
+    padding-top: 6px !important;
+    width: calc(100% - 8px) !important;
+    height: calc(100% - 10px) !important;
+    box-sizing: content-box !important;
+    background-color: #8638B9 !important;
+    background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent) !important;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4) !important;
+    transition-property: border-radius, padding-top !important;
+    transition-duration: .2s !important;
+}
+
+.buy-section .buy-button:active .buy-button-bottom {
+    border-radius: 10px 10px 8px 8px / 8px !important;
+    padding-top: 0 !important;
+}
+
+.buy-section .buy-button-base {
+    position: absolute !important;
+    z-index: -2 !important;
+    top: 4px !important;
+    left: 0 !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    height: calc(100% - 4px) !important;
+    background-color: rgba(0, 0, 0, .15) !important;
+    box-shadow: 0 1px 1px 0 black, inset 0 2px 2px rgba(234, 113, 206, .25) !important;
+}
+
+/* Buy section styling */
+.buy-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* ========================================
+   DEXSCREENER CHART WINDOW STYLING
+   ======================================== */
+
+.dex-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    width: 90vw;
+    max-width: 1000px;
+    height: 80vh;
+    max-height: 700px;
+    z-index: 1000;
+    display: none;
+    pointer-events: auto;
+}
+
+.dex-window.active {
+    display: block;
+}
+
+/* Title bar styling for chart window - prevent dragging */
+.dex-window .title-bar {
+    cursor: default !important;
+    pointer-events: none;
+}
+
+.dex-window .title-bar-controls {
+    pointer-events: auto;
+}
+
+.dex-window .title-bar-controls button {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.chart-container {
+    height: calc(100% - 100px);
+    padding: 10px;
+    background: #f0f0f0;
+    border: 2px inset #c0c0c0;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-embed {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #999;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+    min-height: 100%;
+    align-items: center;
+    align-content: center;
+}
+
+.chart-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.chart-embed .loading-message {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.chart-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 8px;
+    background: #f0f0f0;
+    border: 2px inset #c0c0c0;
+    flex-shrink: 0;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+/* Chart Button Styling - Same as Buy Button */
+.chart-btn {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: relative !important;
+    border: none !important;
+    border-width: 0 !important;
+    padding: 0 8px 12px !important;
+    min-width: 10em !important;
+    min-height: auto !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    font: inherit !important;
+    font-size: inherit !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+}
+
+.chart-btn-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 0 !important;
+    padding: 8px 16px !important;
+    transform: translateY(0) !important;
+    text-align: center !important;
+    color: #fff !important;
+    text-shadow: 0 -1px rgba(0, 0, 0, .25) !important;
+    transition-property: transform !important;
+    transition-duration: .2s !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    font-size: inherit !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.chart-btn:active .chart-btn-top {
+    transform: translateY(6px) !important;
+}
+
+.chart-btn-top::after {
+    content: '' !important;
+    position: absolute !important;
+    z-index: -1 !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: content-box !important;
+    text-align: center !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2) !important;
+    transition-property: border-radius, padding, width, transform !important;
+    transition-duration: .2s !important;
+}
+
+.chart-btn:active .chart-btn-top::after {
+    border-radius: 6px !important;
+    padding: 0 2px !important;
+}
+
+.chart-btn-bottom {
+    position: absolute !important;
+    z-index: -1 !important;
+    bottom: 4px !important;
+    left: 4px !important;
+    border-radius: 8px / 16px 16px 8px 8px !important;
+    padding-top: 6px !important;
+    width: calc(100% - 8px) !important;
+    height: calc(100% - 10px) !important;
+    box-sizing: content-box !important;
+    background-color: #8638B9 !important;
+    background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent) !important;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4) !important;
+    transition-property: border-radius, padding-top !important;
+    transition-duration: .2s !important;
+}
+
+.chart-btn:active .chart-btn-bottom {
+    border-radius: 10px 10px 8px 8px / 8px !important;
+    padding-top: 0 !important;
+}
+
+.chart-btn-base {
+    position: absolute !important;
+    z-index: -2 !important;
+    top: 4px !important;
+    left: 0 !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    height: calc(100% - 4px) !important;
+    background-color: rgba(0, 0, 0, .15) !important;
+    box-shadow: 0 1px 1px 0 black, inset 0 2px 2px rgba(234, 113, 206, .25) !important;
+}
+
+/* Buy Button in Chart Window - Same as main buy button */
+.buy-btn .chart-btn-top::after {
+    background-image: radial-gradient(#EA71CE, #d65bb8) !important;
+}
+
+/* Dex Button in Chart Window - Blue theme */
+.dex-btn .chart-btn-top::after {
+    background-image: radial-gradient(#4a90e2, #357abd) !important;
+}
+
+.dex-btn .chart-btn-bottom {
+    background-color: #2c5aa0 !important;
+}
+
+/* Responsive Design for Chart Window */
+@media (max-width: 768px) {
+    .dex-window {
+        width: 95vw;
+        height: 85vh;
+    }
+
+    .chart-container {
+        height: calc(100% - 120px);
+    }
+
+    .chart-footer {
+        flex-direction: column;
+        gap: 8px;
+        height: 80px;
+    }
+
+    .chart-btn {
+        min-width: 100% !important;
+    }
+}
+
+/* Layer 1: Body (Video Background) - z-index: -2 */
+/* Layer 2-4: Floating Background Images */
+.background-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bg-img {
+    position: absolute;
+    opacity: 1;
+    transition: transform 0.1s ease-out;
+    /* Using natural size */
+}
+
+.bg-img-1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Layer 2 - Light parallax */
+}
+
+.bg-img-2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Layer 3 - Medium parallax */
+}
+
+.bg-img-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    /* Layer 4 - Strong parallax */
+}
+
+/* Front Layer: Main Content - z-index: 10 */
+#main-content {
+    z-index: 10;
+    position: relative;
+}
+
+/* Snowfall Animation - Between background and panels */
+.snowfall-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(50vh) translateX(var(--drift, 0px)) rotate(180deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(calc(var(--drift, 0px) * 2)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* MOOB Gallery Section Styling */
+.gallery-section {
+    margin-bottom: 2rem;
+}
+
+.gallery-container {
+    padding: 1rem;
+}
+
+/* Gallery Navigation */
+.gallery-nav {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-nav-btn {
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.gallery-nav-btn:hover {
+    background: #d0d0d0;
+    border-color: #d0d0d0;
+}
+
+.gallery-nav-btn.active {
+    background: #000080;
+    color: white;
+    border-color: #000080;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f0f0f0;
+    border: 2px inset #c0c0c0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gallery Overlay */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-info h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.gallery-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Gallery Actions */
+.gallery-actions {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.like-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.like-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.like-btn i {
+    color: #ff6b6b;
+}
+
+.like-count {
+    font-weight: bold;
+}
+
+/* Gallery Footer */
+.gallery-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #c0c0c0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.gallery-stats {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+.upload-btn {
+    background: #EA71CE;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    background: #d65bb8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 113, 206, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .gallery-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-nav {
+        gap: 0.25rem;
+    }
+
+    .gallery-nav-btn {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* AI Generate Section Styling */
+.ai-generate-section {
+    margin-bottom: 2rem;
+}
+
+.ai-generate-container {
+    padding: 1.5rem;
+}
+
+/* AI Description */
+.ai-description {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ai-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000080;
+    margin: 0 0 0.5rem 0;
+}
+
+.ai-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Upload Area */
+.upload-area {
+    border: 3px dashed #c0c0c0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    background: #f8f8f8;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #EA71CE;
+    background: #f0f0f0;
+}
+
+.upload-area.dragover {
+    border-color: #EA71CE;
+    background: #ffe6f7;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: #c0c0c0;
+}
+
+.upload-area:hover .upload-icon {
+    color: #EA71CE;
+}
+
+.upload-content h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.upload-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.browse-btn {
+    background: #EA71CE;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.browse-btn:hover {
+    background: #d65bb8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 113, 206, 0.4);
+}
+
+/* Preview Area */
+.preview-area {
+    margin-bottom: 2rem;
+}
+
+.preview-container {
+    text-align: center;
+}
+
+.preview-container h4 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.image-preview {
+    margin-bottom: 1rem;
+}
+
+.preview-img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    border: 2px solid #c0c0c0;
+}
+
+.change-photo-btn {
+    background: #8638B9;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.change-photo-btn:hover {
+    background: #6a2d94;
+}
+
+/* Style Reference */
+.style-reference {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #c0c0c0;
+}
+
+.style-reference h4 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.reference-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reference-img {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 8px;
+    border: 2px solid #c0c0c0;
+}
+
+.reference-image p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+    max-width: 300px;
+}
+
+/* Generate Section */
+.generate-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.generate-btn {
+    background: #EA71CE;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.generate-btn:hover:not(:disabled) {
+    background: #d65bb8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(234, 113, 206, 0.4);
+}
+
+.generate-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.generate-info {
+    margin: 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* Result Area */
+.result-area {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.result-area h4 {
+    margin: 0 0 1.5rem 0;
+    color: #333;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.result-img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 12px;
+    border: 3px solid #c0c0c0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.download-btn,
+.share-btn,
+.regenerate-btn {
+    background: #8638B9;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.download-btn:hover,
+.share-btn:hover,
+.regenerate-btn:hover {
+    background: #6a2d94;
+    transform: translateY(-2px);
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loading-icon {
+    font-size: 3rem;
+    color: #EA71CE;
+}
+
+.loading-content h4 {
+    margin: 0;
+    color: #333;
+}
+
+.loading-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design for AI Generate */
+@media (max-width: 768px) {
+    .ai-generate-container {
+        padding: 1rem;
+    }
+
+    .upload-area {
+        padding: 1.5rem;
+    }
+
+    .result-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-btn,
+    .share-btn,
+    .regenerate-btn {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-7px);
+    }
+}
+
+.bounce {
+    animation: bounce 0.5s ease;
+}
+
+/* Drop-in animation for elements after preloader */
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.8);
+    }
+
+    60% {
+        transform: translateY(10px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Elements start hidden and animate immediately */
+.drop-in-element {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+    transition: none;
+    animation: dropIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Staggered delays for each element */
+.drop-in-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.drop-in-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.drop-in-delay-3 {
+    animation-delay: 0.4s;
+}
+
+.drop-in-delay-4 {
+    animation-delay: 0.6s;
+}
+
+.drop-in-delay-5 {
+    animation-delay: 0.8s;
+}
+
+.drop-in-delay-6 {
+    animation-delay: 1s;
+}
+
+.drop-in-delay-7 {
+    animation-delay: 1.2s;
+}
+
+.drop-in-delay-8 {
+    animation-delay: 1.4s;
+}
+
+/* Floating Actions orchestrated entrance */
+.floating-actions-entrance {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100px) scale(0.8);
+}
+
+body.preloader-complete .floating-actions-entrance {
+    pointer-events: auto;
+    animation: dropIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+/* 3D Shake animation for progress bar */
+@keyframes shake3d {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg);
+    }
+
+    10% {
+        transform: translate3d(-2px, 1px, -1px) rotateX(-1deg) rotateY(1deg);
+    }
+
+    20% {
+        transform: translate3d(2px, -1px, 1px) rotateX(1deg) rotateY(-1deg);
+    }
+
+    30% {
+        transform: translate3d(-1px, 2px, -1px) rotateX(-1deg) rotateY(-1deg);
+    }
+
+    40% {
+        transform: translate3d(1px, -2px, 1px) rotateX(1deg) rotateY(1deg);
+    }
+
+    50% {
+        transform: translate3d(-2px, 1px, -1px) rotateX(-1deg) rotateY(1deg);
+    }
+
+    60% {
+        transform: translate3d(2px, -1px, 1px) rotateX(1deg) rotateY(-1deg);
+    }
+
+    70% {
+        transform: translate3d(-1px, 1px, -1px) rotateX(-1deg) rotateY(-1deg);
+    }
+
+    80% {
+        transform: translate3d(1px, -1px, 1px) rotateX(1deg) rotateY(1deg);
+    }
+
+    90% {
+        transform: translate3d(-1px, 1px, 0) rotateX(0deg) rotateY(0deg);
+    }
+}
+
+/* Glow animation for progress bar */
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+            0 0 10px rgba(255, 255, 255, 0.3),
+            0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 255, 255, 0.4),
+            0 0 40px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Flying Money Animation */
+.flying-money-container {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    width: 80px;
+    height: 80px;
+    animation: money-flyover 4.5s linear forwards;
+}
+
+.flying-money-sprite {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: money-flip 4s step-end forwards;
+}
+
+@keyframes money-flyover {
+    0% {
+        left: 120vw;
+    }
+
+    50% {
+        left: -150px;
+    }
+
+    51% {
+        left: -150px;
+    }
+
+    100% {
+        left: 120vw;
+    }
+}
+
+@keyframes money-flip {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    100% {
+        transform: scaleX(-1);
+    }
+}
+
+@keyframes diagonal-fly-fall {
+    0% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(110vw, 110vh) scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-diagonal-fall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    pointer-events: none;
+    width: 280px;
+    height: auto;
+    animation: diagonal-fly-fall 1.8s ease-in forwards;
+}
+
+/* Explosion at Bottom-Right */
+@keyframes explosion-pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    40% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-explosion-appear {
+    position: fixed;
+    bottom: -80px;
+    right: -80px;
+    z-index: 999999;
+    pointer-events: none;
+    width: 300px;
+    height: auto;
+    animation: explosion-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Potion Animation – appears at bottom-right after explosion, then fades */
+@keyframes potion-pop {
+    0%   { transform: scale(0) translateY(20px); opacity: 0; }
+    40%  { transform: scale(1.2) translateY(-10px); opacity: 1; }
+    70%  { transform: scale(0.9) translateY(0); opacity: 1; }
+    85%  { transform: scale(1) translateY(0); opacity: 1; }
+    100% { transform: scale(0.8) translateY(10px); opacity: 0; }
+}
+
+.animate-potion-appear {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 1000000;
+    pointer-events: none;
+    width: 200px;
+    height: auto;
+    animation: potion-pop 0.6s ease-in-out forwards;
+}
+
+.potion-decoration {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 1;
+}
+
+body.explosion-started .potion-decoration {
+    opacity: 0;
+    transform: translate(20%, 50%) scale(0.8) !important;
+    pointer-events: none;
+}
