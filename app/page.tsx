@@ -21,12 +21,14 @@ export default function Home() {
 			<img
 				src="/bg.avif"
 				alt="Background"
-				className="fixed inset-0 w-full h-full object-cover z-[-1] pointer-events-none"
+				className="fixed inset-0 w-full h-full object-cover z-[-2] pointer-events-none"
 				draggable={false}
 				loading="eager"
 				fetchPriority="high"
 				decoding="async"
 			/>
+			{/* Transparent Black Filter Overlay */}
+			<div className="fixed inset-0 bg-black/50 z-[-1] pointer-events-none" />
 
 			<div
 				id="main-content"
